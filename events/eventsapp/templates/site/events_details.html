@@ -7,7 +7,11 @@
                 {{ events_post.published_date }}
             </div>
         {% endif %}
-        <h1>{{ events_post.title }}</h1>
+{% if user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'events_edit' pk=events.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif  %}
+        
+<h1>{{ events_post.title }}</h1>
         <p>{{ events_post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}
