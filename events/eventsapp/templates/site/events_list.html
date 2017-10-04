@@ -1,6 +1,17 @@
 <html>
-
+<div>
 	<h1>Event list</h1>
-	<h1> testing landing page</h1>
+
+</div>
+
+{% for event in events_posts %}
+	<div>	
+		<p>{{ event.published_date }}</p>
+		<h1><a href=""> {{ event.title }} </a></h1>
+		<p>{{ event.text|linebreaksbr }}</p>
+	</div>
+
+{% endfor  %}
+	
 
 </html>
