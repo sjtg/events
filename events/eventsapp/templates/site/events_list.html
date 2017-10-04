@@ -1,17 +1,33 @@
+{% load staticfiles %}
 <html>
-<div>
-	<h1>Event list</h1>
+    <head>
+        <title>Events - Zambia </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+<body>
+<div class="page-header">
+	<h1><a href="/">Event - Zambia</a></h1>
 
 </div>
 
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+
 {% for event in events_posts %}
-	<div>	
-		<p>{{ event.published_date }}</p>
+	<div class="post">	
 		<h1><a href=""> {{ event.title }} </a></h1>
 		<p>{{ event.text|linebreaksbr }}</p>
+		<p>{{ event.published_date }}</p>
+
 	</div>
+	</div>
+</div>
+</div>
 
 {% endfor  %}
 	
-
+</body>
 </html>
